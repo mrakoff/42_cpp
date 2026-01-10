@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 04:10:34 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/09 05:12:58 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/10 14:14:16 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 int	main(void)
 {
-	randomChump("Small Zombie");
+	Zombie	*z;
+	Zombie	zombie("Stack Zombie");
+	
+	zombie.announce();
+	z = newZombie("Heap Zombie");
+	z->announce();	
+	randomChump("Chump Zombie");
+	delete z;
 
 	return (0);
-	
 }
