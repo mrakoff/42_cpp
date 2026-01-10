@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/09 04:10:34 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/10 15:18:13 by msalangi         ###   ########.fr       */
+/*   Created: 2026/01/10 14:22:34 by msalangi          #+#    #+#             */
+/*   Updated: 2026/01/10 17:45:34 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main(void)
+/* destructor */
+Zombie::~Zombie()
 {
-	Zombie	*z;
-	Zombie	zombie("Stack Zombie");
-	
-	zombie.announce();
-	z = newZombie("Heap Zombie");
-	z->announce();
-	randomChump("Chump Zombie");
-	delete z;
+	std::cout << getName() <<  "\033[32m" << " was destroyed!" << "\033[0m" << std::endl;
+};
 
-	return (0);
+void	Zombie::announce()
+{
+	std::cout << getName() << ": " << "\033[31m" << "BraiiiiiiinnnzzzZ..." << "\033[0m" << std::endl;
+}
+
+std::string	Zombie::getName()
+{
+	return (_name);
+}
+
+void	Zombie::setName(std::string n)
+{
+	_name = n;
 }
