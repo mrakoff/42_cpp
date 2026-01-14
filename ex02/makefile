@@ -3,13 +3,13 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 NAME = BRAIN
 
 SRCS = main.cpp 
-OBJS = $(SRCS:.c=.o)
+# OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 # compilation
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(SRCS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -o $(NAME)
 
 fclean: clean
 	rm -f $(NAME)
