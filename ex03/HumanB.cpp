@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 14:22:34 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/14 16:15:27 by msalangi         ###   ########.fr       */
+/*   Created: 2026/01/14 13:55:57 by msalangi          #+#    #+#             */
+/*   Updated: 2026/01/14 17:20:17 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanB.hpp"
 
-/* destructor */
-Zombie::~Zombie()
+HumanB::HumanB(std::string str) : _weapon(nullptr)
 {
-	std::cout << _name <<  "\033[32m" << " was destroyed!" << "\033[0m" << std::endl;
-};
-
-void	Zombie::announce()
-{
-	std::cout << _name << ": " << "\033[31m" << "BraiiiiiiinnnzzzZ..." << "\033[0m" << std::endl;
+	setName(str);
 }
 
-std::string	Zombie::getName()
+void HumanB::setWeapon(Weapon &weapon)
 {
-	return (_name);
+	_weapon = &weapon;
 }
 
-void	Zombie::setName(std::string n)
+void HumanB::setName(std::string str)
 {
-	_name = n;
+	_name = str;
+}
+
+void HumanB::attack()
+{
+	if (_weapon)
+		std::cout << _name <<  " attacks with their " << _weapon->getType() << std::endl;
+	else
+		std::cout << _name << " is harmless!" << std::endl;
 }

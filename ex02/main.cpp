@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 14:22:34 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/14 16:15:27 by msalangi         ###   ########.fr       */
+/*   Created: 2026/01/13 14:12:55 by msalangi          #+#    #+#             */
+/*   Updated: 2026/01/14 13:52:47 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
+#include <string>
 
-/* destructor */
-Zombie::~Zombie()
+int main(void)
 {
-	std::cout << _name <<  "\033[32m" << " was destroyed!" << "\033[0m" << std::endl;
-};
+	std::string	str = "HI THIS IS BRAIN";
+	std::string *strPtr = &str;
+	std::string	&strRef = str;
+	
+	std::cout << &str << std::endl;
+	std::cout << strPtr << std::endl;
+	std::cout << &strRef << std::endl;
 
-void	Zombie::announce()
-{
-	std::cout << _name << ": " << "\033[31m" << "BraiiiiiiinnnzzzZ..." << "\033[0m" << std::endl;
-}
-
-std::string	Zombie::getName()
-{
-	return (_name);
-}
-
-void	Zombie::setName(std::string n)
-{
-	_name = n;
+	std::cout << str << std::endl;
+	std::cout << *strPtr << std::endl;
+	std::cout << strRef << std::endl;
 }

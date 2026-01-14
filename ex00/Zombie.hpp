@@ -2,7 +2,6 @@
 #define ZOMBIE_H
 
 #include <iostream>
-#include <iomanip>
 #include <string>
 
 class	Zombie

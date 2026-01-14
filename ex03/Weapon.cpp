@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/10 14:22:34 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/14 16:15:27 by msalangi         ###   ########.fr       */
+/*   Created: 2026/01/14 13:57:01 by msalangi          #+#    #+#             */
+/*   Updated: 2026/01/14 17:20:08 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-/* destructor */
-Zombie::~Zombie()
+Weapon::Weapon(std::string str)
 {
-	std::cout << _name <<  "\033[32m" << " was destroyed!" << "\033[0m" << std::endl;
-};
-
-void	Zombie::announce()
-{
-	std::cout << _name << ": " << "\033[31m" << "BraiiiiiiinnnzzzZ..." << "\033[0m" << std::endl;
+	setType(str);
 }
 
-std::string	Zombie::getName()
+std::string const &Weapon::getType()
 {
-	return (_name);
+	return (_type);
 }
-
-void	Zombie::setName(std::string n)
+void Weapon::setType(std::string str)
 {
-	_name = n;
+	_type = str;
 }
