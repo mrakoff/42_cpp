@@ -6,12 +6,22 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 11:52:51 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/15 18:59:12 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/16 14:15:37 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
+/*
+*	f is an array of pointers to member functions of Harl, they return void and take no args. 
+*	since it's a pointer array, the values are addresses of member functions.
+*
+*	(this->*f[i])() is basically Harl.*f[i] or even harl::f[i].
+*	'this' is a pointer to object. it allows us to navigate to the object from the member function, and call other member functions.
+*	in this case that is precisely why we need 'this' - since we can't call a member function without an object.
+*	'->*' is binding an object to a member function, making it possible to call the member function.
+*
+*/
 void	Harl::complain(std::string level)
 {
 	std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
@@ -21,7 +31,6 @@ void	Harl::complain(std::string level)
 	while (levels[i] != level)
 		i++;
 	(this->*f[i])();
-	// harl::f[i]???
 }
 
 void	Harl::_debug(void)

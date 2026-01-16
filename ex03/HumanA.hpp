@@ -9,8 +9,9 @@ class	HumanA
 {
 	public:
 		HumanA(std::string name, Weapon &weapon);
-		void	attack();
-		void	setName(std::string name);
+		~HumanA()	{};
+		void		attack();
+		void		setName(std::string name);
 
 	private:
 		std::string _name;

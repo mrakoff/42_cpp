@@ -19,3 +19,8 @@ re: fclean all
 party: curl parrot.live
 
 .PHONY: all clean fclean re party
+
+#valgrind \ 
+# --leak-check=full \
+# --show-leak-kinds=all \
+# --track-origins=yes \

@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 17:31:06 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/15 11:49:24 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/16 14:22:41 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 /*
 *	opens the file by creating a stream to it using fstream class
 *	memory is automatically discarded after program finishes running
-*	
+*
 *	creates a new file .replace
 *	diff between fstream and ofstream/ifstream ??
+*	
 */
 int	main(int ac, char **av)
 {
@@ -25,7 +26,6 @@ int	main(int ac, char **av)
 		return (1);
 
 	std::string		filename = av[1];
-	std::string		newFilename = filename + ".replace";
 	std::string 	oldString = av[2];
 	std::string		newString = av[3];
 	std::string		line;
@@ -36,7 +36,12 @@ int	main(int ac, char **av)
 		std::cerr << "Error opening file!" << std::endl;
 		return (1);
 	}
-	std::fstream	fileout(newFilename, std::ios::out);
+	if (oldString.empty())
+	{
+		std::cerr << "Invalid input!" << std::endl;
+		return (1);
+	}
+	std::fstream	fileout(filename + ".replace", std::ios::out);
 
 	while (std::getline(filein, line))
 	{
