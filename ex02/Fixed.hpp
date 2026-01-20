@@ -19,17 +19,18 @@ class	Fixed
 
 		/*		overload operators 		*/
 		Fixed& 	operator=(const Fixed &other);
-		Fixed&	operator>(const Fixed &other);
-		Fixed&	operator<(const Fixed &other);
-		Fixed&	operator>=(const Fixed &other);
-		Fixed&	operator<=(const Fixed &other);
-		Fixed&	operator==(const Fixed &other);
-		Fixed&	operator!=(const Fixed &other);
 
-		Fixed&	operator+(const Fixed &other);
-		Fixed&	operator-(const Fixed &other);
-		Fixed&	operator*(const Fixed &other);
-		Fixed&	operator/(const Fixed &other);
+		bool	operator>(const Fixed &other);
+		bool	operator<(const Fixed &other);
+		bool	operator>=(const Fixed &other);
+		bool	operator<=(const Fixed &other);
+		bool	operator==(const Fixed &other);
+		bool	operator!=(const Fixed &other);
+
+		Fixed	operator+(const Fixed &add);
+		Fixed	operator-(const Fixed &subtract);
+		Fixed	operator*(const Fixed &multiply);
+		Fixed	operator/(const Fixed &divide);
 
 		Fixed&	operator++();
 		Fixed&	operator--();
@@ -37,10 +38,10 @@ class	Fixed
 		Fixed	operator--(int);
 
 		/*	overloaded member functions		*/
-		static Fixed&	min(Fixed &obj1, Fixed &obj2);
-		static Fixed&	min(const Fixed &obj1, const Fixed &obj2);
-		static Fixed&	max(Fixed &obj1, Fixed &obj2);
-		static Fixed&	max(const Fixed &obj1, const Fixed &obj2);
+		static Fixed&			min(Fixed &obj1, Fixed &obj2);
+		static const Fixed&		min(const Fixed &obj1, const Fixed &obj2);
+		static Fixed&			max(Fixed &obj1, Fixed &obj2);
+		static const Fixed&		max(const Fixed &obj1, const Fixed &obj2);
 
 		/*		member functions			*/
 		int		getRawBits(void) const;

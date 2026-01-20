@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 15:07:13 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/20 19:48:45 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/20 20:06:51 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,52 +59,72 @@ Fixed&	Fixed::operator=(const Fixed &other)
 	return (*this);
 }
 
-Fixed&	Fixed::operator>(const Fixed &other)
+bool	Fixed::operator>(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator<(const Fixed &other)
+bool	Fixed::operator<(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator>=(const Fixed &other)
+bool	Fixed::operator>=(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator<=(const Fixed &other)
+bool	Fixed::operator<=(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator==(const Fixed &other)
+bool	Fixed::operator==(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator!=(const Fixed &other)
+bool	Fixed::operator!=(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator+(const Fixed &other)
+Fixed	Fixed::operator+(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator-(const Fixed &other)
+Fixed	Fixed::operator-(const Fixed &other)
 {
 	
 }
 
-Fixed&	Fixed::operator*(const Fixed &other)
+Fixed	Fixed::operator*(const Fixed &other)
 {
 
 }
 
-Fixed&	Fixed::operator/(const Fixed &other)
+Fixed	Fixed::operator/(const Fixed &other)
+{
+	
+}
+
+Fixed&	Fixed::operator++()
+{
+
+}
+
+Fixed&	Fixed::operator--()
+{
+
+}
+
+Fixed	Fixed::operator++(int)
+{
+
+}
+
+Fixed	Fixed::operator--(int)
 {
 	
 }
@@ -124,7 +144,7 @@ Fixed& Fixed::min(Fixed &obj1, Fixed &obj2)
 	
 }
 
-Fixed&	Fixed::min(const Fixed &obj1, const Fixed &obj2)
+const Fixed&	Fixed::min(const Fixed &obj1, const Fixed &obj2)
 {
 	
 }
@@ -133,7 +153,7 @@ Fixed&	Fixed::max(Fixed &obj1, Fixed &obj2)
 	
 }
 
-Fixed&	Fixed::max(const Fixed &obj1, const Fixed &obj2)
+const Fixed&	Fixed::max(const Fixed &obj1, const Fixed &obj2)
 {
 	
 }
