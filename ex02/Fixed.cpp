@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 15:07:13 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/20 20:06:51 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/20 20:34:59 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,72 +61,84 @@ Fixed&	Fixed::operator=(const Fixed &other)
 
 bool	Fixed::operator>(const Fixed &other)
 {
-	
+	return (_value > other._value);
 }
 
 bool	Fixed::operator<(const Fixed &other)
 {
-	
+	return (_value < other._value);
 }
 
 bool	Fixed::operator>=(const Fixed &other)
 {
-	
+	return (_value >= other._value);
 }
 
 bool	Fixed::operator<=(const Fixed &other)
 {
-	
+	return (_value <= other._value);
 }
 
 bool	Fixed::operator==(const Fixed &other)
 {
-	
+	return (_value == other._value);
 }
 
 bool	Fixed::operator!=(const Fixed &other)
 {
-	
+	return (_value != other._value);
 }
 
-Fixed	Fixed::operator+(const Fixed &other)
+Fixed	Fixed::operator+(const Fixed &add)
 {
-	
+	Fixed	n;
+
+	n._value = _value + add._value;
+	return (n);
 }
 
-Fixed	Fixed::operator-(const Fixed &other)
+Fixed	Fixed::operator-(const Fixed &subtract)
 {
-	
+	Fixed	n;
+
+	n._value = _value - subtract._value;
+	return (n);
 }
 
-Fixed	Fixed::operator*(const Fixed &other)
+Fixed	Fixed::operator*(const Fixed &multiply)
 {
+	Fixed	n;
 
+	n._value = _value * multiply._value;
+	return (n);
 }
 
-Fixed	Fixed::operator/(const Fixed &other)
+Fixed	Fixed::operator/(const Fixed &divide)
 {
-	
+	Fixed	n;
+
+	n._value = _value / divide._value;
+	return (n);
 }
 
 Fixed&	Fixed::operator++()
 {
-
+	// return ();
 }
 
 Fixed&	Fixed::operator--()
 {
-
+	// return ();
 }
 
 Fixed	Fixed::operator++(int)
 {
-
+	// return ();
 }
 
 Fixed	Fixed::operator--(int)
 {
-	
+	// return ();	
 }
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& obj)
@@ -141,16 +153,22 @@ std::ostream&	operator<<(std::ostream& os, const Fixed& obj)
 
 Fixed& Fixed::min(Fixed &obj1, Fixed &obj2)
 {
-	
+	if (obj1 <= obj2)
+		return (obj1);
+	return (obj2);
 }
 
 const Fixed&	Fixed::min(const Fixed &obj1, const Fixed &obj2)
 {
-	
+	// if (obj1 <= obj2)
+	// 	return (obj1);
+	// return (obj2);
 }
 Fixed&	Fixed::max(Fixed &obj1, Fixed &obj2)
 {
-	
+	if (obj1 >= obj2)
+		return (obj1);
+	return (obj2);
 }
 
 const Fixed&	Fixed::max(const Fixed &obj1, const Fixed &obj2)
