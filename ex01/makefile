@@ -26,12 +26,14 @@ fclean: clean
 re: fclean all
 
 #test cases
-# test: test1 test2 test3 test4 test5 
+test: test1 
+# test2 test3 test4 test5 
 
-# test1: all
-# 	@echo "\033[32m************* DEBUG LEVEL *************\033[0m"
-# 	./$(NAME) "DEBUG"
-# 	@echo " "
+test1: all
+	./$(NAME)
+	@echo ""
+	@echo "\033[32m************* EXPECTED OUTPUT: *************\033[0m"
+	@echo "Default constructor called\nInt constructor called\nFloat constructor called\nCopy constructor called\nCopy assignment operator called\nFloat constructor called\nCopy assignment operator called\nDestructor called\na is 1234.43\nb is 10\nc is 42.4219\nd is 10\na is 1234 as integer\nb is 10 as integer\nc is 42 as integer\nd is 10 as integer\nDestructor called\nDestructor called\nDestructor called\nDestructor called"
 
 # test2: all
 # 	@echo "\033[32m************* INFO LEVEL **************\033[0m"
@@ -53,4 +55,4 @@ re: fclean all
 # 	./$(NAME) "AAAAARGH"
 # 	@echo " "
 
-.PHONY: all clean fclean re # test
+.PHONY: all clean fclean re test

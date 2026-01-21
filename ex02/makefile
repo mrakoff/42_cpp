@@ -26,17 +26,21 @@ fclean: clean
 re: fclean all
 
 #test cases
-# test: test1 test2 test3 test4 test5 
+# test: test1 test2
 
-# test1: all
-# 	@echo "\033[32m************* DEBUG LEVEL *************\033[0m"
-# 	./$(NAME) "DEBUG"
-# 	@echo " "
+#test1 test2 test3 test4 test5 
 
-# test2: all
-# 	@echo "\033[32m************* INFO LEVEL **************\033[0m"
-# 	./$(NAME) "INFO"
-# 	@echo " "
+test1: all
+	./$(NAME)
+	@echo ""
+	@echo "\033[32m************* EXPECTED OUTPUT: *************\033[0m"
+	@echo "0\n0.00390625\n0.00390625\n0.00390625\n0.0078125\n10.1016\n10.1016"
+
+test2: all
+	./$(NAME)
+	@echo ""
+	@echo "\033[32m************* EXPECTED OUTPUT: *************\033[0m"
+	@echo "12\n0.125\n11.9961\n11.9961\n0.125\n12\n0\n1\n1.5\n96\n11.875\n12.125\n1\n0\n0\n1"
 
 # test3: all
 # 	@echo "\033[32m************ WARNING LEVEL ************\033[0m"
@@ -53,4 +57,4 @@ re: fclean all
 # 	./$(NAME) "AAAAARGH"
 # 	@echo " "
 
-.PHONY: all clean fclean re # test
+.PHONY: all clean fclean re test1 test2

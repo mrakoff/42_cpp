@@ -26,12 +26,14 @@ fclean: clean
 re: fclean all
 
 #test cases
-# test: test1 test2 test3 test4 test5 
+test: test1 
+#test2 test3 test4 test5 
 
-# test1: all
-# 	@echo "\033[32m************* DEBUG LEVEL *************\033[0m"
-# 	./$(NAME) "DEBUG"
-# 	@echo " "
+test1: all
+	./$(NAME)
+	@echo ""
+	@echo "\033[32m************* EXPECTED OUTPUT: *************\033[0m"
+	@echo "Default constructor called\nCopy constructor called\nCopy assignment operator called <-- This line may be missing depending on your implementation\ngetRawBits member function called\nDefault constructor called\nCopy assignment operator called\ngetRawBits member function called\ngetRawBits member function called\n0\ngetRawBits member function called\n0\ngetRawBits member function called\n0\nDestructor called\nDestructor called\nDestructor called"
 
 # test2: all
 # 	@echo "\033[32m************* INFO LEVEL **************\033[0m"
@@ -53,4 +55,4 @@ re: fclean all
 # 	./$(NAME) "AAAAARGH"
 # 	@echo " "
 
-.PHONY: all clean fclean re # test
+.PHONY: all clean fclean re test
