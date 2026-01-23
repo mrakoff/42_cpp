@@ -7,15 +7,15 @@
 class	ClapTrap
 {
 	public:
-	/*		constructors			*/
+	/*			constructors			*/
 	ClapTrap();
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &other);
 
-	/*	copy assignment operator	*/
+	/*		copy assignment operator	*/
 	ClapTrap &operator=(const ClapTrap &other);
 	
-	/*		destructor				*/
+	/*			destructor				*/
 	~ClapTrap();
 
 	/*		member functions			*/
@@ -23,11 +23,11 @@ class	ClapTrap
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 	
-	private:
+	protected:
 		std::string	_name;
-		int			_hitPoints = 10;
-		int			_energyPoints = 10;
-		int			_attackDamage = 0;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
 
 };
 

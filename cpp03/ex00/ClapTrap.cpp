@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 12:38:29 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/22 13:52:02 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/22 16:09:34 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "\033[32mConstructor called\033[0m" << std::endl;
 	_name = name;
+	_hitPoints = 10;
+	_energyPoints = 10;
+	_attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)

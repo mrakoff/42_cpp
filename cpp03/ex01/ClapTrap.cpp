@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 12:38:29 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/22 13:52:02 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/23 13:06:43 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,20 @@
 /*		constructors			*/
 ClapTrap::ClapTrap() : _name("Nemo"), _hitPoints(0), _energyPoints(0), _attackDamage(0)
 {
-	std::cout << "\033[32mDefault constructor called\033[0m" << std::endl;
+	std::cout << "\033[32mDefault constructor for ClapTrap called\033[0m" << std::endl;
 }
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "\033[32mConstructor called\033[0m" << std::endl;
+	std::cout << "\033[32mConstructor for ClapTrap called\033[0m" << std::endl;
 	_name = name;
+	_hitPoints = 10;
+	_energyPoints = 10;
+	_attackDamage = 0;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-	std::cout << "\033[32mCopy constructor called\033[0m" << std::endl;
+	std::cout << "\033[32mCopy constructor for ClapTrap called\033[0m" << std::endl;
 	_name = other._name;
 	_hitPoints = other._hitPoints;
 	_energyPoints = other._energyPoints;
@@ -48,7 +51,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 /*		destructor				*/
 ClapTrap::~ClapTrap()
 {
-	std::cout << "\033[31mDestructor called\033[0m" << std::endl;
+	std::cout << "\033[31mDestructor for ClapTrap called\033[0m" << std::endl;
 }
 
 /*		member functions			*/
