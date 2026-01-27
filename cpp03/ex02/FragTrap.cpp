@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 14:31:15 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/27 01:34:54 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 02:54:49 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ FragTrap::FragTrap(const FragTrap &other)
 	setAttackDamage(other._attackDamage);
 	setEnergyPoints(other._energyPoints);
 	setHitPoints(other._hitPoints);
+}
+
+FragTrap&	FragTrap::operator=(const FragTrap &other)
+{
+	if (this != &other)
+	{
+		_name = other._name;
+		_hitPoints = other._hitPoints;
+		_energyPoints = other._energyPoints;
+		_attackDamage = other._attackDamage;
+	}
+	return (*this);
 }
 
 /*		destructor				*/

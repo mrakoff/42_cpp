@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 14:51:21 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/27 02:14:26 by msalangi         ###   ########.fr       */
+/*   Created: 2026/01/27 02:38:07 by msalangi          #+#    #+#             */
+/*   Updated: 2026/01/27 03:16:56 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#include "Animal.hpp"
 
 int main(void)
 {
-	DiamondTrap Diamond("Diamond");
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	std::cout << std::endl << "DiamondTrap stats:" << std::endl;
-	std::cout << "Name: " << Diamond.getName() << std::endl;
-	std::cout << "Energy Points: " << Diamond.getEnergyPoints() << std::endl;
-	std::cout << "HP: " << Diamond.getHitPoints() << std::endl;
-	std::cout << "Attack Damage: " << Diamond.getAttackDamage() << std::endl << std::endl;
-	
-	Diamond.attack("Someone");
-	Diamond.takeDamage(20);
-	Diamond.beRepaired(10);
-	Diamond.guardGate();
-	Diamond.highFivesGuys();
-	Diamond.whoAmI();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound();
+	j->makeSound();
+	meta->makeSound();
+
+	delete j;
+	delete i;
+
+	return 0;
 }

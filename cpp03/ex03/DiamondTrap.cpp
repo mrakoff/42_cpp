@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 15:03:34 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/27 02:10:27 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 02:57:42 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other) : ScavTrap(), FragTrap()
 	setAttackDamage(other._attackDamage);
 	setEnergyPoints(other._energyPoints);
 	setHitPoints(other._hitPoints);
+}
+
+DiamondTrap&	DiamondTrap::operator=(const DiamondTrap &other)
+{
+	if (this != &other)
+	{
+		_name = other._name;
+		_hitPoints = other._hitPoints;
+		_energyPoints = other._energyPoints;
+		_attackDamage = other._attackDamage;
+	}
+	return (*this);
 }
 
 /*		destructor				*/

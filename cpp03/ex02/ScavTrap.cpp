@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 13:54:09 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/23 13:07:53 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 02:54:05 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ ScavTrap::ScavTrap(const ScavTrap &other)
 	setAttackDamage(other._attackDamage);
 	setEnergyPoints(other._energyPoints);
 	setHitPoints(other._hitPoints);
+}
+
+ScavTrap&	ScavTrap::operator=(const ScavTrap &other)
+{
+	if (this != &other)
+	{
+		_name = other._name;
+		_hitPoints = other._hitPoints;
+		_energyPoints = other._energyPoints;
+		_attackDamage = other._attackDamage;
+	}
+	return (*this);
 }
 
 /*		destructor				*/
