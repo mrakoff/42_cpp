@@ -8,9 +8,10 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class	DiamondTrap : public FragTrap, public ScavTrap
+class	DiamondTrap : public ScavTrap, public FragTrap
 {
 	public:
+
 	/*			constructors			*/
 	DiamondTrap();
 	DiamondTrap(std::string name);
@@ -24,6 +25,18 @@ class	DiamondTrap : public FragTrap, public ScavTrap
 	void	setHitPoints(unsigned int amount);
 	void	setEnergyPoints(unsigned int amount);
 	void	setAttackDamage(unsigned int amount);
+
+	std::string		getName();
+	unsigned int	getHitPoints();
+	unsigned int	getEnergyPoints();
+	unsigned int	getAttackDamage();
+
+	void	whoAmI();
+
+	private:
+	
+	std::string		_name;
+	// std::string		;
 };
 
 #endif

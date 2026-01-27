@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 14:31:15 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/23 14:49:04 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 01:34:54 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 FragTrap::FragTrap()
 {
 	setName("Nemo");
-	setAttackDamage(0);
-	setEnergyPoints(0);
-	setHitPoints(0);
+	setAttackDamage(30);
+	setEnergyPoints(100);
+	setHitPoints(100);
 	std::cout << "\033[32mA Default FragTrap has appeared! (Default constructor for FragTrap called)\033[0m" << std::endl;
 }
 

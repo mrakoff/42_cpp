@@ -6,23 +6,23 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 14:31:15 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/23 15:01:44 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 02:11:01 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 /*		constructors			*/
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap()
 {
 	setName("Nemo");
-	setAttackDamage(0);
-	setEnergyPoints(0);
-	setHitPoints(0);
+	setAttackDamage(30);
+	setEnergyPoints(100);
+	setHitPoints(100);
 	std::cout << "\033[32mA Default FragTrap has appeared! (Default constructor for FragTrap called)\033[0m" << std::endl;
 }
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	setName(name);
 	setAttackDamage(30);
@@ -31,7 +31,7 @@ FragTrap::FragTrap(std::string name)
 	std::cout << "\033[32mAn untamed FragTrap has appeared! (Constructor for FragTrap called)\033[0m" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &other)
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap()
 {
 	std::cout << "\033[32mCopy constructor for FragTrap called\033[0m" << std::endl;
 
@@ -47,6 +47,7 @@ FragTrap::~FragTrap()
 	std::cout << "\033[31mDestructor for FragTrap called\033[0m" << std::endl;
 }
 
+/*		member functions			*/
 void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << _name << " politely requests a high five.." << std::endl;

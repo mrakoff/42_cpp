@@ -6,32 +6,32 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 15:03:34 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/23 15:36:52 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 02:10:27 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 /*		constructors			*/
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap() 
 {
 	setName("Nemo");
-	setAttackDamage(0);
-	setEnergyPoints(0);
-	setHitPoints(0);
+	setAttackDamage(FragTrap::_attackDamage);
+	setEnergyPoints(ScavTrap::_energyPoints);
+	setHitPoints(FragTrap::_hitPoints);
 	std::cout << "\033[32mA Default DiamondTrap has appeared! (Default constructor for DiamondTrap called)\033[0m" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
 	setName(name);
-	setAttackDamage(30);
-	setEnergyPoints(100);
-	setHitPoints(100);
-	std::cout << "\033[32mAn untamed DiamondTrap has appeared! (Constructor for DiamondTrap called)\033[0m" << std::endl;
+	setAttackDamage(FragTrap::_attackDamage);
+	setEnergyPoints(ScavTrap::_energyPoints);
+	setHitPoints(FragTrap::_hitPoints);
+	std::cout << "\033[32mA furious DiamondTrap has appeared! (Constructor for DiamondTrap called)\033[0m" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other)
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ScavTrap(), FragTrap()
 {
 	std::cout << "\033[32mCopy constructor for DiamondTrap called\033[0m" << std::endl;
 
@@ -46,6 +46,17 @@ DiamondTrap::~DiamondTrap()
 {
 	std::cout << "\033[31mDestructor for DiamondTrap called\033[0m" << std::endl;
 }
+
+/*		member functions			*/
+void	DiamondTrap::whoAmI() 
+{
+	std::cout << "DiamondTrap says: my name is " << _name << " and my ClapTrap name is " << ClapTrap::_name << std::endl;
+}
+
+std::string		DiamondTrap::getName()							{	return (_name);				}
+unsigned int	DiamondTrap::getHitPoints()						{	return (_hitPoints);		}
+unsigned int	DiamondTrap::getEnergyPoints()					{	return (_energyPoints);		}
+unsigned int	DiamondTrap::getAttackDamage()					{	return (_attackDamage);		}
 
 void	DiamondTrap::setName(std::string name)					{	_name = name;				}
 void	DiamondTrap::setHitPoints(unsigned int amount)			{	_hitPoints = amount;		}
