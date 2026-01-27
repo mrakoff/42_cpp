@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 02:58:53 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/27 03:06:31 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 21:10:10 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Cat::Cat()
 {
 	std::cout << "\033[32mDefault constructor for Cat called\033[0m" << std::endl;
+	_type = "Cat";
 }
 
 Cat::Cat(std::string type)
@@ -42,3 +43,5 @@ Cat::~Cat()
 {
 	std::cout << "\033[31mDestructor for Cat called\033[0m" << std::endl;
 }
+
+void	Cat::makeSound() const	{	std::cout << "meow" << std::endl;	}

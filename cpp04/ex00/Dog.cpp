@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 03:00:19 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/27 03:05:48 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 21:06:49 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Dog::Dog()
 {
 	std::cout << "\033[32mDefault constructor for Dog called\033[0m" << std::endl;
+	_type = "Dog";
 }
-
 
 Dog::Dog(std::string type)
 {
@@ -43,3 +43,5 @@ Dog::~Dog()
 {
 	std::cout << "\033[31mDestructor for Dog called\033[0m" << std::endl;
 }
+
+void	Dog::makeSound() const		{	std::cout << "woof" << std::endl;	}

@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 02:43:01 by msalangi          #+#    #+#             */
-/*   Updated: 2026/01/27 03:13:42 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/01/27 22:36:29 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Animal::Animal()
 {
 	std::cout << "\033[32mDefault constructor for Animal called\033[0m" << std::endl;
+	_type = "Animal";
 }
 
 Animal::Animal(std::string type)
@@ -43,7 +44,5 @@ Animal::~Animal()
 	std::cout << "\033[31mDestructor for Animal called\033[0m" << std::endl;
 }
 
-std::string Animal::getType()
-{
-	return (_type);		
-}
+void	Animal::makeSound() const		{	std::cout << "..." << std::endl;	}
+std::string Animal::getType() const		{	return (_type);		}
