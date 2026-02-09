@@ -32,7 +32,7 @@ Fixed::Fixed(const float n)
 {
 	std::cout << "\033[32mFloat constructor called\033[0m" << std::endl;
 	/* n multiplied by 2^bits */
-	setRawBits(roundf(n * (float)(1 << _bits)));
+	setRawBits(roundf(n * static_cast<float>(1 << _bits)));
 }
 
 Fixed::Fixed(const Fixed &other) : _value(other._value)
@@ -83,7 +83,7 @@ void	Fixed::setRawBits(int const raw)	{	_value = raw;	}
 float	Fixed::toFloat( void ) const
 {
 	/* converts the fixed-point value to a floating-point value */
-	return ((float)_value / (float)(1 << _bits));
+	return (static_cast<float>_value / static_cast<float>(1 << _bits));
 }
 
 int		Fixed::toInt( void ) const

@@ -31,7 +31,7 @@ Fixed::Fixed(const int n)
 Fixed::Fixed(const float n)
 {
 	// std::cout << "\033[32mFloat constructor called\033[0m" << std::endl;
-	setRawBits(roundf(n * (float)(1 << _bits)));
+	setRawBits(roundf(n * static_cast<float>(1 << _bits)));
 }
 
 Fixed::Fixed(const Fixed &other) : _value(other._value)
@@ -151,6 +151,6 @@ int		Fixed::getRawBits(void) const		{	return (_value);	}
 
 void	Fixed::setRawBits(int const raw)	{	_value = raw;	}
 
-float	Fixed::toFloat( void ) const		{	return ((float)_value / (float)(1 << _bits));	}
+float	Fixed::toFloat( void ) const		{	return (static_cast<float>_value / static_cast<float>(1 << _bits));	}
 
 int		Fixed::toInt( void ) const			{	return (_value >> _bits);	}
