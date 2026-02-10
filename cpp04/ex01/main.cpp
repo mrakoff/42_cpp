@@ -16,6 +16,38 @@
 
 int main(void)
 {
+
+	std::cout << "************	SHALLOW/DEEP COPY TEST	************" << std::endl;
+	
+	Cat		*Gato = new Cat();
+	Cat		*Cato(Gato);
+
+	Gato->getBrain()->setIdea("hmmmmmm..");
+	std::cout << "Gato is thinking.. " << Gato->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Cato is thinking.. " << Cato->getBrain()->getIdea(0) << std::endl;
+	
+	Cato->getBrain()->changeIdea(0, "Cato is hungry..");
+	std::cout << "Gato is thinking.. " << Gato->getBrain()->getIdea(0) << std::endl;
+	std::cout << "Cato is thinking.. " << Cato->getBrain()->getIdea(0) << std::endl;
+
+	delete Gato;
+	std::cout << "Cato is thinking.. " << Cato->getBrain()->getIdea(0) << std::endl;
+	
+	// Cat		Gato(Cat);
+	// Cat		Cato(&Gato);
+
+	// Gato.getBrain()->setIdea("hmmmmmm..");
+	// std::cout << "Gato is thinking.. " << Gato.getBrain()->getIdea(0) << std::endl;
+	// std::cout << "Cato is thinking.. " << Cato.getBrain()->getIdea(0) << std::endl;
+
+	// Gato.getBrain()->changeIdea(0, "Gato is hungry..");
+	// std::cout << "Gato is thinking.. " << Gato.getBrain()->getIdea(0) << std::endl;
+	// std::cout << "Cato is thinking.. " << Cato.getBrain()->getIdea(0) << std::endl;
+
+	// std::cout << "Cato is thinking.. " << Cato.getBrain()->getIdea(0) << std::endl;
+
+	std::cout << std::endl << "*******************	TEST	*******************" << std::endl;
+
 	Animal	*zoo[4];
 	int		i = 0;
 
@@ -38,5 +70,4 @@ int main(void)
 		delete zoo[i];
 		i++;
 	}
-
 }

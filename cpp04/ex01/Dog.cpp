@@ -29,8 +29,17 @@ Dog::Dog(std::string type)
 Dog::Dog(const Dog &other)
 {
 	std::cout << "\033[32mCopy constructor for Dog called\033[0m" << std::endl;
+	int i = 0;
+
 	_type = other._type;
-	_brain = other._brain;
+	_brain = new Brain();
+	_brain->setI(other._brain->getI());
+	
+	while (i < _brain->getI())
+	{
+		_brain->setIdea(other._brain->getIdea(i));
+		i++;
+	}
 }
 
 Dog&	Dog::operator=(const Dog &other)
@@ -45,8 +54,13 @@ Dog&	Dog::operator=(const Dog &other)
 
 Dog::~Dog()
 {
-	std::cout << "\033[31mDestructor for Dog called\033[0m" << std::endl;
 	delete _brain;
+	std::cout << "\033[31mDestructor for Dog called\033[0m" << std::endl;
+}
+
+Brain*	Dog::getBrain()
+{
+	return(_brain);
 }
 
 void	Dog::makeSound() const		{	std::cout << "woof" << std::endl;	}

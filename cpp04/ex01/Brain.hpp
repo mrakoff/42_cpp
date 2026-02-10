@@ -10,8 +10,13 @@ class	Brain
 
 	Brain();
 	~Brain();
-	void		setIdea(const std::string &idea);
-	std::string	getIdea(unsigned int index);
+	void				setIdea(const std::string &idea);
+	std::string			getIdea(unsigned int index);
+	void				changeIdea(unsigned int index, std::string idea);
+
+	int					getI();
+	void				setI(int i);
+
 
 	private:
 

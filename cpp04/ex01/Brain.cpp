@@ -36,9 +36,25 @@ void	Brain::setIdea(const std::string &idea)
 		_ideas[_i] = idea;
 	}
 }
+
+void	Brain::changeIdea(unsigned int index, std::string idea)
+{
+	_ideas[index] = idea;
+}
+
 std::string	Brain::getIdea(unsigned int index)
 {
 	if (index < 100 && index < _i)
 		return (_ideas[index]);
 	return ("No thoughts, head empty...");
+}
+
+int	Brain::getI()
+{
+	return (_i);
+}
+
+void	Brain::setI(int i)
+{
+	_i = i;
 }

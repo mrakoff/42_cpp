@@ -29,24 +29,47 @@ Cat::Cat(std::string type)
 Cat::Cat(const Cat &other)
 {
 	std::cout << "\033[32mCopy constructor for Cat called\033[0m" << std::endl;
+	int i = 0;
+
 	_type = other._type;
-	_brain = other._brain;
+	_brain = new Brain();
+	_brain->setI(other._brain->getI());
+	
+	while (i < _brain->getI())
+	{
+		_brain->setIdea(other._brain->getIdea(i));
+		i++;
+	}
 }
 
 Cat&	Cat::operator=(const Cat &other)
 {
+	int i = 0;
 	if (this != &other)
 	{
 		_type = other._type;
-		_brain = other._brain;
+		delete _brain;
+		_brain = new Brain;
+		
+		_brain->setI(other._brain->getI());
+		while (i < _brain->getI())
+		{
+			_brain->setIdea(other._brain->getIdea(i));
+			i++;
+		}
 	}
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	std::cout << "\033[31mDestructor for Cat called\033[0m" << std::endl;
 	delete _brain;
+	std::cout << "\033[31mDestructor for Cat called\033[0m" << std::endl;
+}
+
+Brain*	Cat::getBrain()
+{
+	return(_brain);
 }
 
 void	Cat::makeSound() const	{	std::cout << "meow" << std::endl;	}
