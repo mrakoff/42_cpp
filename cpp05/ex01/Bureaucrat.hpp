@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -17,7 +18,7 @@ class Bureaucrat
 	/*		overload operators	*/
 	/*	using delete since we have const name,
 		which should not be ever changed after construction	*/
-	Bureaucrat& operator=(Bureaucrat &other) = delete;
+	Bureaucrat &operator=(Bureaucrat &other) = delete;
 	
 	/*		destructor			*/
 	~Bureaucrat();
@@ -38,15 +39,17 @@ class Bureaucrat
 	};
 
 	const std::string	getName();
-	unsigned int		getGrade();
+	int					getGrade();
 
 	void	gradeUp();
 	void	gradeDown();
 
+	void	signForm(Form &F);
+
 	private:
 
 	const std::string	_name;
-	unsigned int		_grade;
+	int					_grade;
 };
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &Bureaucrat);

@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 18:36:58 by mel               #+#    #+#             */
-/*   Updated: 2026/03/12 15:57:20 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/03/13 19:08:27 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,15 @@ void	Bureaucrat::gradeDown()
 
 std::ostream &operator<<(std::ostream &os, Bureaucrat &Bureaucrat)
 {
-	os << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade() << std::endl;
+	os << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade();
 	return (os);
 }
 
+void	Bureaucrat::signForm(Form &F)
+{
+	F.beSigned(*this);
+}
+
+
 std::string const	Bureaucrat::getName() 		{		return(_name);		}
-unsigned int		Bureaucrat::getGrade()		{		return (_grade);	}
+int					Bureaucrat::getGrade()		{		return (_grade);	}
