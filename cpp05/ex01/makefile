@@ -1,5 +1,5 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++11
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 NAME = ex01
 
 SRCS = main.cpp Bureaucrat.cpp Form.cpp

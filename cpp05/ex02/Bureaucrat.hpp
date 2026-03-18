@@ -4,7 +4,8 @@
 #include <iomanip>
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -38,13 +39,14 @@ class Bureaucrat
     	}
 	};
 
-	const std::string	getName();
-	int					getGrade();
+	const std::string	getName() const;
+	int					getGrade() const;
 
 	void	gradeUp();
 	void	gradeDown();
+	void	signForm(AForm &F);
 
-	void	signForm(Form &F);
+	void	executeForm(AForm const &form) const;
 
 	private:
 

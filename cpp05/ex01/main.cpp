@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 18:36:06 by mel               #+#    #+#             */
-/*   Updated: 2026/03/13 19:17:48 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/03/18 15:51:12 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 int main(void)
 {
-	try 
+	std::cout << "************  TEST 1  ************" << std::endl;
+	try
 	{
 		Bureaucrat Boss("Boss", 1);
 		Form F("Important", 1, 1);
@@ -28,10 +29,11 @@ int main(void)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;	
+		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
 
+	std::cout << "************  TEST 2  ************" << std::endl;
 	try 
 	{
 		Bureaucrat Junior("Junior", 150);
@@ -49,7 +51,8 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	try 
+	std::cout << "************  TEST 3  ************" << std::endl;
+	try
 	{
 		Bureaucrat Middle("Middle", 75);
 		Form F("Medium", 75, 10);

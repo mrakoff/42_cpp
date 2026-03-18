@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 18:36:06 by mel               #+#    #+#             */
-/*   Updated: 2026/03/12 18:25:54 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/03/18 15:51:51 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(void)
 {
+	std::cout << "************  TEST 1  ************" << std::endl;
 	std::cout << "level 1: " << std::endl;
 	try
 	{
@@ -26,6 +27,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
+	std::cout << "************  TEST 2  ************" << std::endl;
 	std::cout << "level 150: " << std::endl;	
 	try
 	{
@@ -38,6 +40,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 	
+	std::cout << "************  TEST 3  ************" << std::endl;
 	std::cout << "level 1500: " << std::endl;
 	try
 	{
@@ -50,6 +53,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
+	std::cout << "************  TEST 4  ************" << std::endl;
 	std::cout << "level 0: " << std::endl;	
 	try
 	{
@@ -62,6 +66,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
+	std::cout << "************  TEST 5  ************" << std::endl;
 	std::cout << "level 2 to 0: " << std::endl;
 	try
 	{
@@ -78,6 +83,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
+	std::cout << "************  TEST 6  ************" << std::endl;
 	std::cout << "level 149 to 151: " << std::endl;
 	try
 	{
@@ -94,6 +100,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
+	std::cout << "************  TEST 7  ************" << std::endl;
 	std::cout << "level 75 to 76 and back: " << std::endl;
 	try
 	{
@@ -111,4 +118,3 @@ int main(void)
 	std::cout << std::endl;
 
 }
-

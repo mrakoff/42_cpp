@@ -6,7 +6,7 @@
 /*   By: msalangi <msalangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 18:36:58 by mel               #+#    #+#             */
-/*   Updated: 2026/03/13 19:08:27 by msalangi         ###   ########.fr       */
+/*   Updated: 2026/03/18 19:59:38 by msalangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,24 @@ std::ostream &operator<<(std::ostream &os, Bureaucrat &Bureaucrat)
 	return (os);
 }
 
-void	Bureaucrat::signForm(Form &F)
+void	Bureaucrat::signForm(AForm &F)
 {
 	F.beSigned(*this);
 }
 
+void	Bureaucrat::executeForm(AForm const &form) const
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return ;
+	}
+	std::cout << "Bureaucrat " << getName() << ", grade " << getGrade() << ", executed " << form.getName() << std::endl;
+}
 
-std::string const	Bureaucrat::getName() 		{		return(_name);		}
-int					Bureaucrat::getGrade()		{		return (_grade);	}
+std::string const	Bureaucrat::getName() const 	{		return(_name);		}
+int					Bureaucrat::getGrade() const	{		return (_grade);	}
